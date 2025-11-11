@@ -22,14 +22,14 @@ class VacancyParser:
 
         for item in raw_data:
             salary_info = item.get("salary") or {}
-            # employer может быть dict или строкой или None
+
             employer = item.get("employer")
             if isinstance(employer, dict):
                 company_name = employer.get("name") or "Unknown"
             elif isinstance(employer, str):
                 company_name = employer
             else:
-                # иногда employer может быть None
+
                 company_name = "Unknown"
 
             parsed_vacancies.append({

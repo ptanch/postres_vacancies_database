@@ -30,7 +30,7 @@ class HeadHunterAPI:
         all_vacancies = []
         for page in range(pages):
             params = {
-                "text": f"company_name:({company_name}) AND {keyword}",  # <--- фильтрация и по компании, и по слову
+                "text": f"company_name:({company_name}) AND {keyword}",
                 "per_page": per_page,
                 "page": page,
                 "only_with_salary": True,

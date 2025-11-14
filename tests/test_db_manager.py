@@ -1,5 +1,7 @@
+from unittest.mock import MagicMock, patch
+
 import pytest
-from unittest.mock import patch, MagicMock
+
 from src.db_manager import DBManager
 
 
@@ -10,6 +12,7 @@ def db_manager():
 
 
 #     ТЕСТЫ НА SELECT-ЗАПРОСЫ
+
 
 @patch("psycopg2.connect")
 def test_execute_query_returns_data(mock_connect, db_manager):
@@ -82,6 +85,7 @@ def test_get_vacancies_with_keyword(mock_exec, db_manager):
 
 
 #     ТЕСТЫ НА INSERT
+
 
 @patch("psycopg2.connect")
 def test_insert_companies_calls_execute(mock_connect, db_manager):

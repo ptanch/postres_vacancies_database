@@ -1,5 +1,7 @@
+from unittest.mock import MagicMock, patch
+
 import pytest
-from unittest.mock import patch, MagicMock
+
 from src.api_client import HeadHunterAPI
 
 
@@ -13,9 +15,7 @@ def hh_api():
 def test_fetch_vacancies_returns_list(mock_get, hh_api):
     """Проверяет, что метод возвращает список вакансий"""
     mock_response = MagicMock()
-    mock_response.json.return_value = {
-        "items": [{"id": "1", "name": "Python Developer"}]
-    }
+    mock_response.json.return_value = {"items": [{"id": "1", "name": "Python Developer"}]}
     mock_response.raise_for_status = MagicMock()
     mock_get.return_value = mock_response
 

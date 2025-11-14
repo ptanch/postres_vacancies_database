@@ -1,4 +1,5 @@
 import pytest
+
 from src.vacancies import VacancyParser
 
 
@@ -51,9 +52,9 @@ def test_parse_vacancies_handles_employer_types(raw_vacancies):
     """Проверяет обработку employer в виде dict, str и None"""
     parsed = VacancyParser.parse_vacancies(raw_vacancies)
 
-    assert parsed[0]["company_name"] == "Яндекс"      # dict
-    assert parsed[1]["company_name"] == "Tinkoff"     # str
-    assert parsed[2]["company_name"] == "Unknown"     # None
+    assert parsed[0]["company_name"] == "Яндекс"  # dict
+    assert parsed[1]["company_name"] == "Tinkoff"  # str
+    assert parsed[2]["company_name"] == "Unknown"  # None
 
 
 def test_parse_vacancies_handles_missing_salary(raw_vacancies):
@@ -72,7 +73,7 @@ def test_extract_companies_returns_unique_list():
         {"company_name": "Яндекс"},
         {"company_name": "Tinkoff"},
         {"company_name": "Tinkoff "},  # с пробелом
-        {"company_name": " "},         # пустая строка
+        {"company_name": " "},  # пустая строка
         {"company_name": None},
     ]
 

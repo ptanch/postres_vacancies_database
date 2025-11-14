@@ -1,6 +1,7 @@
-import psycopg2
 import os
-from typing import List, Tuple, Any
+from typing import Any, List, Tuple
+
+import psycopg2
 from dotenv import load_dotenv
 
 load_dotenv()

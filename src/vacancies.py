@@ -1,10 +1,11 @@
-from typing import Dict, List, Any
+from typing import Any, Dict, List
 
 
 class VacancyParser:
     """
     Класс для обработки данных о вакансиях, полученных с hh.ru.
     """
+
     def __init__(self, vacancies: list):
         """
         :param vacancies: список вакансий, полученных из API или JSON
@@ -32,14 +33,16 @@ class VacancyParser:
 
                 company_name = "Unknown"
 
-            parsed_vacancies.append({
-                "company_name": company_name,
-                "vacancy_name": item.get("name"),
-                "salary_from": salary_info.get("from"),
-                "salary_to": salary_info.get("to"),
-                "currency": salary_info.get("currency"),
-                "vacancy_url": item.get("alternate_url"),
-            })
+            parsed_vacancies.append(
+                {
+                    "company_name": company_name,
+                    "vacancy_name": item.get("name"),
+                    "salary_from": salary_info.get("from"),
+                    "salary_to": salary_info.get("to"),
+                    "currency": salary_info.get("currency"),
+                    "vacancy_url": item.get("alternate_url"),
+                }
+            )
 
         return parsed_vacancies
 

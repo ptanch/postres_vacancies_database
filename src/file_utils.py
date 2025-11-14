@@ -1,7 +1,6 @@
 import json
-from typing import Any, Dict, List
 from pathlib import Path
-
+from typing import Any, Dict, List
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 DATA_DIR.mkdir(exist_ok=True)

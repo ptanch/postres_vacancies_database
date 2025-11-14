@@ -1,11 +1,12 @@
-from src.api_client import HeadHunterAPI
-from src.vacancies import VacancyParser
-from src.db_manager import DBManager
-from src.file_utils import FileManager
-from src.db_setup import create_tables
-
 import os
+
 from dotenv import load_dotenv
+
+from src.api_client import HeadHunterAPI
+from src.db_manager import DBManager
+from src.db_setup import create_tables
+from src.file_utils import FileManager
+from src.vacancies import VacancyParser
 
 db_name = "hh_vacancies_db"
 

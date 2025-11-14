@@ -1,5 +1,5 @@
-import psycopg2
 import os
+import psycopg2
 from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 from dotenv import load_dotenv
 
@@ -60,7 +60,7 @@ def create_tables(db_name: str) -> None:
                     employer_id SERIAL PRIMARY KEY,
                     name VARCHAR(255) NOT NULL
                 );
-                    
+
                 CREATE TABLE IF NOT EXISTS vacancies (
                     vacancy_id SERIAL PRIMARY KEY,
                     title VARCHAR(255) NOT NULL,

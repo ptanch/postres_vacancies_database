@@ -1,6 +1,6 @@
 import os
+
 import requests
-from typing import List, Dict, Optional
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -14,7 +14,7 @@ class HeadHunterAPI:
 
     BASE_URL = "https://api.hh.ru/vacancies"
 
-    def __init__(self, token: Optional[str] = None):
+    def __init__(self, token: str = None):
         self.token = token or os.getenv("HH_TOKEN")
         self.headers = {"User-Agent": "hh_jobs_project"}
         if self.token:
@@ -22,7 +22,7 @@ class HeadHunterAPI:
 
     def fetch_vacancies(
         self, company_name: str, keyword: str = "Python", per_page: int = 50, pages: int = 1
-    ) -> List[Dict]:
+    ) -> list:
         """
         Получает список вакансий по ключевому слову и названию компании.
         Пример: text="company_name:(Tinkoff) AND Python"
